@@ -1,0 +1,10 @@
+{
+  "url": "https://data.source.coop/cboettig/fishbase/fb/v26.06/parquet/ecology.parquet",
+  "sha256": "539c03f60c226305836b22c86987b1732966968a5d394b4bffd0e09492efe674",
+  "captured_at": "2026-11-16T17:08:33.547440+00:00",
+  "release": "v26.06",
+  "table": "ecology",
+  "bytes": 26695,
+  "parent_sha256": "a0cc4b3b22e0e55c57b6d63447177ba3cd65e84d71e5c768ac7e3c87d6095cf9",
+  "subset_predicate": "SpecCode IN (2,3,3950)"
+}

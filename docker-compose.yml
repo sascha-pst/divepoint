@@ -1,0 +1,35 @@
+services:
+  db:
+    build: ./database
+    environment:
+      POSTGRES_USER: divepoint
+      POSTGRES_PASSWORD: divepoint
+      POSTGRES_DB: divepoint
+    ports: ["127.0.0.1:5432:5432"]
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./database/001_initial.sql:/docker-entrypoint-initdb.d/001_initial.sql:ro
+      - ./database/002_fishbase_ingestion.sql:/docker-entrypoint-initdb.d/002_fishbase_ingestion.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U divepoint"]
+      interval: 5s
+      retries: 10
+  api:
+    build: ./backend
+    environment:
+      DIVEPOINT_DATABASE_URL: postgresql://divepoint:divepoint@db:5432/divepoint
+    ports: ["127.0.0.1:8000:8000"]
+    depends_on:
+      db:
+        condition: service_healthy
+  game:
+    image: node:22-alpine
+    working_dir: /game
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    ports: ["127.0.0.1:5173:5173"]
+    volumes:
+      - ./game:/game
+      - game-modules:/game/node_modules
+volumes:
+  db-data:
+  game-modules:

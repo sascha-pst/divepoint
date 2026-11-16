@@ -1,0 +1,12 @@
+{
+  "captured_at": "2026-11-16T16:12:51.519937+00:00",
+  "url": "https://www.marinespecies.org/rest/AphiaRecordsByName/Sebastes%20atrovirens?marine_only=true&like=false",
+  "status": 200,
+  "sha256": "7a1d16f3c42a1df23b79e9f5da85eed3e86b3c877e0f3a900c8e08984112a5ef",
+  "headers": {
+    "date": "Mon, 16 Nov 2026 16:12:51 GMT",
+    "content-type": "application/json"
+  },
+  "user_agent": "Divepoint/0.1 (development biodiversity API fixture capture)",
+  "kind": "recorded upstream response"
+}

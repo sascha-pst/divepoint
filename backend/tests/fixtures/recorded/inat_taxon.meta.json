@@ -1,0 +1,13 @@
+{
+  "captured_at": "2026-11-16T17:48:48.275195+00:00",
+  "url": "https://api.inaturalist.org/v1/taxa/64481",
+  "status": 200,
+  "sha256": "25ac518ffc7d4b8585921c552b607b6b7e00c97ce77cbe8459719ebf1af72e5b",
+  "headers": {
+    "date": "Mon, 16 Nov 2026 17:48:48 GMT",
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"8b1a-MvMNnVmZ1wi14U9ywBDOfQRynCs\""
+  },
+  "user_agent": "Divepoint/0.1 (development biodiversity API fixture capture)",
+  "kind": "recorded upstream response"
+}

@@ -1,0 +1,13 @@
+{
+  "captured_at": "2026-11-16T17:47:54.598593+00:00",
+  "url": "https://api.obis.org/v3/checklist?geometry=POLYGON%28%28-121.95+36.55%2C-121.85+36.55%2C-121.85+36.65%2C-121.95+36.65%2C-121.95+36.55%29%29&startdepth=0&enddepth=30&startdate=1970-01-01",
+  "status": 200,
+  "sha256": "c46a63ac6478dfd82fa5494a97726598a7e55e6f0d1980e98c1064474ecca1d0",
+  "headers": {
+    "date": "Mon, 16 Nov 2026 17:47:54 GMT",
+    "content-type": "application/json; charset=utf-8",
+    "etag": "W/\"1faf-cTih5NyU+nGF950kELbpFIgJhXs\""
+  },
+  "user_agent": "Divepoint/0.1 (development biodiversity API fixture capture)",
+  "kind": "recorded upstream response"
+}

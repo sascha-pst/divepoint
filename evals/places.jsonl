@@ -1,0 +1,5 @@
+{"prompt":"Monterey Bay at 15 m in autumn","expected_type":"dive"}
+{"prompt":"Blue Hole","expected_type":"clarify"}
+{"prompt":"Great Barrier Reef","expected_type":"dive"}
+{"prompt":"Red Sea at 30 m in May","expected_type":"dive"}
+{"prompt":"the surface of Mars","expected_type":"reject"}

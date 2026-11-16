@@ -1,0 +1,10 @@
+{
+  "url": "https://data.source.coop/cboettig/fishbase/fb/v26.06/parquet/morphdat.parquet",
+  "sha256": "ab20df4e64cdaf1616959dd9005fadd7a29eeb83d1ac95e78d33c6f53dedb95c",
+  "captured_at": "2026-11-16T17:08:34.615577+00:00",
+  "release": "v26.06",
+  "table": "morphdat",
+  "bytes": 39404,
+  "parent_sha256": "180c611fac5972661809df3072c09c7d5b2aebcf6d002c7e2578f8c4d09b9c7f",
+  "subset_predicate": "Speccode IN (2,3,3950)"
+}

@@ -1,0 +1,12 @@
+{
+  "captured_at": "2026-11-16T17:48:47.003499+00:00",
+  "url": "https://www.marinespecies.org/rest/AphiaRecordByAphiaID/274772",
+  "status": 200,
+  "sha256": "c3d70ecd6a64abe925b745dc2cdf5f07d7514c62ba0e22190b5fc9746e540e7f",
+  "headers": {
+    "date": "Mon, 16 Nov 2026 17:48:46 GMT",
+    "content-type": "application/json"
+  },
+  "user_agent": "Divepoint/0.1 (development biodiversity API fixture capture)",
+  "kind": "recorded upstream response"
+}

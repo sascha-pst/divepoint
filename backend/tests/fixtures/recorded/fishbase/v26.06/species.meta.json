@@ -1,0 +1,10 @@
+{
+  "url": "https://data.source.coop/cboettig/fishbase/fb/v26.06/parquet/species.parquet",
+  "sha256": "27dd2111621edfd8826be3854caa9455475115725ed00639a5e79e631c061d62",
+  "captured_at": "2026-11-16T17:08:33.113363+00:00",
+  "release": "v26.06",
+  "table": "species",
+  "bytes": 18819,
+  "parent_sha256": "87c99bc57f368c6102ea4042e7e6c8019c7405d5a352ead840f06244609ab101",
+  "subset_predicate": "SpecCode IN (2,3,3950)"
+}

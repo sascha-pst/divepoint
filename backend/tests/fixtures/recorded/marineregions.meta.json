@@ -1,0 +1,12 @@
+{
+  "captured_at": "2026-11-16T17:47:52.307303+00:00",
+  "url": "https://www.marineregions.org/rest/getGazetteerRecordsByName.json/Monterey%20Bay/?like=true&fuzzy=true",
+  "status": 200,
+  "sha256": "3c0eed11d2a97ea73e7b99eaf929a21d4136e77117df24abae1de1232cf2ac96",
+  "headers": {
+    "date": "Mon, 16 Nov 2026 17:47:46 GMT",
+    "content-type": "application/json; charset=UTF-8;"
+  },
+  "user_agent": "Divepoint/0.1 (development biodiversity API fixture capture)",
+  "kind": "recorded upstream response"
+}

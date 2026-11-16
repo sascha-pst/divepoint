@@ -1,0 +1,12 @@
+{
+  "captured_at": "2026-11-16T17:47:57.285864+00:00",
+  "url": "https://api.gbif.org/v1/occurrence/search?geometry=POLYGON%28%28-121.95+36.55%2C-121.85+36.55%2C-121.85+36.65%2C-121.95+36.65%2C-121.95+36.55%29%29&facet=speciesKey&facetLimit=1000&limit=0&hasCoordinate=true&hasGeospatialIssue=false&occurrenceStatus=PRESENT&year=1970%2C2100",
+  "status": 200,
+  "sha256": "91994b2d3a5c2b572ac1644dc1e428697e770f1143cbeba7b7bf4f70ec86c2bf",
+  "headers": {
+    "content-type": "application/json",
+    "date": "Mon, 16 Nov 2026 17:47:56 GMT"
+  },
+  "user_agent": "Divepoint/0.1 (development biodiversity API fixture capture)",
+  "kind": "recorded upstream response"
+}
