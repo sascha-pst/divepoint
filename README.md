@@ -1,5 +1,10 @@
 # Divepoint
 
+[Play the public noncommercial demo](https://sascha-pst.github.io/divepoint/).
+The hosted edition includes the three recorded destinations, both dive sequences,
+month and depth filters, species cards, and the browser-local Fishdex.
+Run the API locally for live location search and Ask the Guide.
+
 Describe a marine place, explore species recorded there, and collect discoveries in a Fishdex.
 See the [PRD](docs/PRD%20%E2%80%94%20Divepoint%20Describe%20a%20Place,%20Dive%20It,%20Meet%20What%20Lives%20There.md).
 

@@ -1,9 +1,14 @@
+/// <reference types="vite/client" />
 import type Phaser from "phaser";
 import type { Ocean } from "./ocean";
 import type { Card, DiveScenery, LogEntry, Manifest, Place, Species } from "./types";
 import { DepthSurvey, speciesNearDepth, surveyStops } from "./sequences";
 import terrain from "./terrain.json";
 import "./style.css";
+
+const publicDemo = import.meta.env.MODE === "demo";
+const demoPlaces = ["Monterey Bay", "Red Sea", "Raja Ampat"];
+let demoCards: Record<number, Card> = {};
 
 const root = document.querySelector<HTMLDivElement>("#app")!;
 const esc = (value: unknown) =>
@@ -104,6 +109,16 @@ async function api<T>(path: string, body?: unknown): Promise<T> {
     );
   return data;
 }
+async function loadRecordedDive() {
+  const slug = requestBody.text.toLowerCase().replaceAll(" ", "-");
+  const key = `${slug}-${requestBody.depth_m}-${requestBody.month ?? 0}`;
+  const response = await fetch(`./dives/${key}.json`, { signal: AbortSignal.timeout(15000) });
+  if (!response.ok) throw new Error("Couldn’t load this recorded dive. Try again.");
+  const data: { manifest: Manifest; cards: Record<number, Card> } = await response.json();
+  demoCards = data.cards;
+  return data.manifest;
+}
+
 function shell(content: string, dark = false) {
   document.body.classList.toggle("diving", dark);
   root.innerHTML = `<header class="topbar"><button class="brand" id="home">${icon}divepoint<span class="beta">FIELD NOTES / 01</span></button>
@@ -150,12 +165,14 @@ function home() {
   shell(`<main class="home-grid"><section class="intro"><p class="eyebrow"><span class="tiny-dot"></span> AN OCEAN OF TRUE STORIES</p>
     <h1>A little curiosity.<br>A whole <em>ocean.</em></h1>
     <p class="lede">Pick a place. Slip beneath the surface.<br>Meet the life that calls it home.</p>
-    <form id="plan-form"><label for="place">WHERE SHALL WE GO?</label><div class="input-wrap"><span aria-hidden="true">⌕</span><input id="place" name="place" required maxlength="300" value="Monterey Bay" placeholder="A bay, a reef, a sea…" autocomplete="off"></div>
+    <form id="plan-form"><label for="place">WHERE SHALL WE GO?</label>${publicDemo
+      ? `<select id="place" name="place">${demoPlaces.map((place) => `<option>${place}</option>`).join("")}</select>`
+      : '<div class="input-wrap"><span aria-hidden="true">⌕</span><input id="place" name="place" required maxlength="300" value="Monterey Bay" placeholder="A bay, a reef, a sea…" autocomplete="off"></div>'}
     <div class="filter-row"><label for="maxdepth">EXPLORE DOWN TO<select id="maxdepth"><option value="15">15 metres</option><option value="30" selected>30 metres</option><option value="60">60 metres</option></select></label>
       <label for="month">WHEN<select id="month"><option value="">Any month</option>${MONTHS.map((m, i) => `<option value="${i + 1}">${m}</option>`).join("")}</select></label></div>
     <button class="primary" id="explore" type="submit">Find my dive <span>↗</span></button><p id="plan-status" class="form-status" role="status" aria-live="polite"></p></form>
-    <div class="suggestions"><span>FOLLOW A HUNCH</span><button data-place="Monterey Bay">Monterey Bay</button><button data-place="Red Sea">Red Sea</button><button data-place="Raja Ampat">Raja Ampat</button></div>
-    <p class="small-note">Monterey Bay, Red Sea, and Raja Ampat are ready to dive offline.<br>Other destinations search live marine records.</p></section>
+    ${publicDemo ? "" : `<div class="suggestions"><span>FOLLOW A HUNCH</span><button data-place="Monterey Bay">Monterey Bay</button><button data-place="Red Sea">Red Sea</button><button data-place="Raja Ampat">Raja Ampat</button></div>`}
+    <p class="small-note">${publicDemo ? "Noncommercial demo · Three destinations with recorded sightings." : "Monterey Bay, Red Sea, and Raja Ampat are ready to dive offline.<br>Other destinations search live marine records."}</p></section>
     <aside class="ocean-postcard"><div class="postcard-top"><span>THE PACIFIC COLLECTION</span><span>36°48′ N · 121°54′ W</span></div>
       <div class="sun-halo"></div><div class="water-line"></div><div class="water-rays"></div>
       <div class="contour c1"></div><div class="contour c2"></div><div class="contour c3"></div>
@@ -198,9 +215,10 @@ async function plan() {
   const status = document.querySelector("#plan-status");
   if (status)
     status.textContent =
-      "Resolving the place and checking individual species records. Live searches can take a little longer.";
+      publicDemo ? "Loading recorded sightings…" :
+        "Resolving the place and checking individual species records. Live searches can take a little longer.";
   try {
-    const result = await api<
+    const result = publicDemo ? await loadRecordedDive() : await api<
       Manifest | { type: "clarify"; candidates: Place[]; message: string }
     >("/v1/dives/plan", requestBody);
     if (result.type === "clarify") {
@@ -225,7 +243,7 @@ async function plan() {
     const message =
       error instanceof Error ? error.message : "Dive search failed.";
     if (status)
-      status.textContent = message.includes("fetch")
+      status.textContent = !publicDemo && message.includes("fetch")
         ? "Start the Divepoint API on port 8000, then try again."
         : message;
     else
@@ -314,7 +332,7 @@ async function startDive(data: Manifest, stops: readonly number[] = []) {
     `<main class="dive-shell">
     <header class="dive-toolbar">
       <div><h1>${esc(data.place.name)}</h1>${galleryNote ? `<p class="gallery-credit">${galleryNote}${terrainGrid ? ` · <a href="${safeURL(terrain.source.url)}" target="_blank" rel="noopener noreferrer">${esc(terrain.source.label)} ↗</a> · Stylized scale` : ""}</p>` : ""}</div>
-      <div class="dive-actions"><button id="ask-guide" class="guide-button">Ask the Guide</button><button id="surface" class="surface-button">Surface ↑</button></div>
+      <div class="dive-actions">${publicDemo ? "" : '<button id="ask-guide" class="guide-button">Ask the Guide</button>'}<button id="surface" class="surface-button">Surface ↑</button></div>
     </header>
     <div class="dive-layout">
       <div class="dive-gallery ${scenery}-gallery">
@@ -359,7 +377,7 @@ async function startDive(data: Manifest, stops: readonly number[] = []) {
     document.querySelector<HTMLInputElement>("#depth-slider")?.focus();
     ocean.setDepth(target);
   });
-  document.querySelector("#ask-guide")!.addEventListener("click", () => askGuide(data));
+  document.querySelector("#ask-guide")?.addEventListener("click", () => askGuide(data));
   document
     .querySelector("#surface")!
     .addEventListener("click", () => (ocean ? surface() : home()));
@@ -510,7 +528,7 @@ async function encounter(species: Species) {
   );
   const token = ++cardToken;
   try {
-    const card = await api<Card>(
+    const card = publicDemo ? demoCards[species.aphia_id] : await api<Card>(
       `/v1/species/${species.aphia_id}?dive_id=${manifest.id}`,
     );
     if (token !== cardToken || !modal().open) return;
@@ -520,6 +538,7 @@ async function encounter(species: Species) {
       <dl>${card.facts.map((f) => `<div><dt>${esc(f.label)}</dt><dd>${esc(f.value)} <a href="${safeURL(f.source_url)}" title="FishBase ${esc(f.release)}" aria-label="Source for ${esc(f.label)}" target="_blank" rel="noopener noreferrer">↗</a></dd></div>`).join("")}<div><dt>Diet / conservation status</dt><dd>No sourced data yet</dd></div></dl>
       <section class="evidence"><p class="eyebrow">SEEN HERE · ${esc(card.place_name)}</p><p><b>${card.evidence.obis_records}</b> qualifying records in this sample.<br>Latest observation: ${card.evidence.latest_year}.</p>
       <div class="source-links">${card.evidence.record_urls.map((u, i) => `<a href="${safeURL(u)}" target="_blank" rel="noopener noreferrer">OBIS record ${i + 1} ↗</a>`).join("")}</div><details><summary>Dataset credits & evidence scope</summary><p>${esc(card.evidence.scope)}</p><ul>${card.dataset_credits.map((dataset) => `<li><a href="${safeURL(dataset.source_url)}" target="_blank" rel="noopener noreferrer">${esc(dataset.title)} · citation ↗</a> · <a href="${safeURL(dataset.license_url)}" target="_blank" rel="noopener noreferrer">${esc(dataset.license)} ↗</a></li>`).join("")}</ul></details></section><p class="small-note">Rarity is relative to this record sample. It is not a conservation assessment.</p></div></div>`);
+    if (publicDemo) return;
     const guideButton = document.createElement("button");
     guideButton.className = "guide-button";
     guideButton.textContent = "Ask the Guide";
