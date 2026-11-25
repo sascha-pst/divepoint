@@ -1,0 +1,16 @@
+{
+  "MRGID": 19167,
+  "gazetteerSource": "IMIS",
+  "placeType": "Bay",
+  "latitude": 36.8,
+  "longitude": -121.9,
+  "minLatitude": 36.57,
+  "minLongitude": -121.74,
+  "maxLatitude": 37.02,
+  "maxLongitude": -122.12,
+  "precision": null,
+  "preferredGazetteerName": "Monterey Bay",
+  "preferredGazetteerNameLang": "English",
+  "status": "standard",
+  "accepted": 19167
+}

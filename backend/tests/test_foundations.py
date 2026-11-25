@@ -15,7 +15,9 @@ def test_cache_expiration_and_isolation():
     assert cache.get("a") is None
 
 
-def test_health_and_unimplemented_plan():
+def test_health_and_recorded_plan():
     with TestClient(app) as client:
         assert client.get("/health").json()["status"] == "ok"
-        assert client.post("/v1/dives/plan", json={"text": "Monterey"}).status_code == 501
+        response = client.post("/v1/dives/plan", json={"text": "Monterey"})
+        assert response.status_code == 200
+        assert response.json()["type"] == "dive"

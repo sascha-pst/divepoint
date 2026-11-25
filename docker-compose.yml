@@ -18,11 +18,15 @@ services:
     build: ./backend
     environment:
       DIVEPOINT_DATABASE_URL: postgresql://divepoint:divepoint@db:5432/divepoint
+      DIVEPOINT_GUIDE_API_KEY: ${DIVEPOINT_GUIDE_API_KEY:-}
+      DIVEPOINT_GUIDE_MODEL: ${DIVEPOINT_GUIDE_MODEL:-claude-haiku-5-5}
     ports: ["127.0.0.1:8000:8000"]
     depends_on:
       db:
         condition: service_healthy
   game:
+    environment:
+      DIVEPOINT_API_URL: http://api:8000
     image: node:22-alpine
     working_dir: /game
     command: sh -c "npm install && npm run dev -- --host 0.0.0.0"

@@ -30,36 +30,109 @@ and the client. The SQL initializer runs only on a new database volume.
 Copy `.env.example` to `.env` for local overrides. Configure a project contact
 in the User-Agent before making live requests. No API keys are needed for M1.
 
-## Current scope
+## Play the prototype
 
-M1 foundations: server-side provider adapters, timeout/retry/pacing, a process-local
-30-day TTL cache, initial SQL schema, pinned FishBase parquet ingestion, offline tests,
-and a TypeScript/Vite workspace with Phaser installed for M4. `/health` works;
-all product routes return 501. No dive, occurrence evidence, or species facts are fabricated.
+After installing dependencies, run both services with one command:
 
-Fixtures include dated **real API responses** from all five providers and real FishBase
-parquet subsets alongside synthetic edge cases. Every recorded body has checksum/provenance metadata.
-Aggregate responses are discovery data, not evidence qualifying species for a dive.
-Provider responses currently retain upstream JSON except typed WoRMS records and photo output.
-The cache is volatile and has no eviction bound; use persistent bounded caching before production.
-FishBase ingestion stages all source rows in Postgres, then publishes species and sourced
-fact documents only for exact, accepted marine WoRMS species matches. Unmapped records stay
-in raw storage; no taxonomy IDs, IUCN statuses, diet prose, or occurrence claims are invented.
+```sh
+./scripts/dev.sh
+```
+
+Open **http://127.0.0.1:5173**, keep **Monterey Bay**, and choose **Find my dive →
+Enter the water**. Use the depth slider or ↑/↓ to descend. Click a drawn fish (or a
+name in “Within reach”) to log it and open its sourced card. Cards pause the four-minute
+game timer. **Surface** ends the dive and shows your discoveries. **Fishdex** persists
+in this browser's local storage, across visits; it is not an account-backed logbook.
+
+Monterey Bay, Red Sea, and Raja Ampat each have a bundled, checksum-verified occurrence
+snapshot. Pick a destination and use **Any month** for the broadest sample. Red Sea and
+Raja Ampat use Marine Regions areas 4264 and 21076. The packs contain a bounded sample of
+OBIS records that pass area, depth, date, presence, and QC checks, with accepted WoRMS
+taxonomy via OBIS and matching FishBase v26.06 facts. Each card links to individual
+occurrences and source datasets. Red Sea and Raja Ampat ship without photo metadata.
+
+Refresh a reef snapshot explicitly with
+`PYTHONPATH=backend uv run --project backend python backend/scripts/capture_reef_packs.py red_sea`
+or use `raja_ampat` as the argument. Capture needs internet and the local FishBase parquet
+snapshot. Playing the bundled dives and opening cards use the local data.
+It requires no LLM key, database setup, or live biodiversity API access to plan/play.
+Species cards link to original iNaturalist photo pages when a matching photo reference
+exists. The demo loads no third-party photos. Other marine place names use live Marine
+Regions search and a bounded OBIS occurrence sample. Live and bundled records are checked
+against the reviewed dataset list in `backend/app/checklist/sources.py`. Review new
+datasets and their citation and license terms before adding them to that list. FishBase
+v26.06 data is CC BY-NC 4.0 and is included for the noncommercial demo. Unknown/ambiguous names,
+sparse samples, and service failures have separate UI states. Sparse dives require an
+explicit player choice, and empty samples cannot be played.
+
+Red Sea and Raja Ampat render perspective 3D meshes from bundled GEBCO_2026 depth
+grids. The game scales the axes to fit the viewport and moves the view as you change
+depth. Coral decorations are illustrative. The grids cover local terrain patches,
+while fish evidence comes from the wider occurrence search areas. The mesh needs
+no map service at play time.
+
+To refresh the grids, install Rasterio in a capture environment and run
+`python game/scripts/capture_terrain.py`. The script reads small windows by HTTP range
+from the Source Cooperative GeoTIFF mirror and saves grid-cell coordinates and source
+metadata in `game/src/terrain.json`.
+
+GEBCO Bathymetric Compilation Group 2026 (2026). The GEBCO_2026 Grid.
+[Dataset and citation](https://doi.org/10.5285/4f68d5c7-45eb-f999-e063-7086abc036fa)
+
+Both services are required. Vite proxies `/v1` to FastAPI at port 8000. Compose sets the
+proxy target to its `api` service. A static GitHub Pages deployment alone cannot serve
+the API; this change does not deploy the game or push changes automatically.
+
+## Current scope and limits
+
+- Server-side place resolution, conservative text/depth/month parsing, hemisphere-aware
+  seasons, place confirmation and a schematic globe centered on the resolved longitude.
+- Individual OBIS occurrences are checked for location inside the displayed search bounds,
+  non-land bathymetry, clean quality flags, positive species-level AphiaID, marine status,
+  presence, date/year and depth. Species require accepted WoRMS-derived OBIS taxonomy.
+- A manifest with log-weighted encounter sampling, depth bands and sample-relative rarity.
+  Weights reflect the validated sample, **not** total abundance or real encounter probability.
+- Phaser underwater scene with illustrated fish, depth controls, timer, accessible encounter
+  buttons, sourced FishBase facts, photo source links, local Fishdex and dive summaries.
+- Dated API fixtures and the runtime starter pack retain source metadata and checksums.
+  Full downloaded FishBase snapshots stay under ignored `backend/data/`.
+
+This is the first playable slice, not the PRD's launch-ready v1. Live search samples the
+first 1,000 fish occurrences and checks up to 24 candidate species; it is not a complete
+checklist. Search areas are labeled gazetteer bounding boxes or approximate 10 km point
+envelopes, rather than exact marine polygons. Month filters exclude ambiguous date ranges.
+Cold live searches may take up to 45 seconds; the eight-second launch target is not met
+for arbitrary places. Bundled dives show the snapshot capture date.
+
+### Ask the Guide
+
+Open the guide from the dive or a species card. It retrieves evidence scoped to the current
+dive and links each displayed statement to its source record, species page, photo, or exhibit
+page. Set `DIVEPOINT_GUIDE_API_KEY` in the backend environment (or in the repository-root
+`.env` for local development) to let Claude select the most relevant retrieved statements.
+`DIVEPOINT_GUIDE_MODEL` optionally overrides the model. In this mode the player's question
+and the retrieved statements are sent to Claude. Without a key, the guide displays a
+labeled record lookup for supported questions.
+
+The parser is deterministic rather than LLM-backed. GBIF merging, general geocoder fallback,
+full taxonomy normalization, non-fish templates, authentication, persistent server
+logbook/cache, and comprehensive place/guide evals remain future work. Species cards leave
+unavailable facts and photos unknown. FishBase facts cover the starter species; live taxa
+outside that set may have only taxonomy and occurrence evidence. Sprites and scenery are
+stylized, with approximate colors and movement, and are not identification/behavior claims.
 
 ## Next steps
 
-1. Finish M1: expand verified taxonomy mappings, add SeaLifeBase ingestion, verify
-   geographic/filter semantics and source links, add typed response schemas and persistent caching.
-2. M2: implement parsing, polygon resolution, ambiguity, occurrence pagination and validation,
-   accepted AphiaID normalization, depth/month/year/marine filtering, sparse-area handling,
-   and deterministic weights. Aggregate counts alone must never qualify species.
-3. M3: sourced cards, licensed photos, species documents, retrieval and cited guide responses.
-4. M4–M5: manifest-driven Phaser scene/globe, logbook, air timer and progression.
+1. Validate the UI in a connected browser and broaden the reviewed place set.
+2. Add complete occurrence pagination, GBIF merging and persistent caching; benchmark live latency.
+3. Connect the ingested Postgres species documents to broaden the cited guide.
+4. Replace the schematic globe and generic fish templates with richer geographic/species art.
 
-The five eval cases only seed the future suite. The quick runner validates case structure;
-it does not claim the PRD's place accuracy, citation precision or latency targets.
-Authentication, player isolation, a migration runner, and production deployment
-remain future work. Docker configuration is intended for local development.
+The quick eval runs the guide API against bundled recorded dives with external HTTP blocked
+and the model disabled. It checks each cited statement and exact source URL, or the expected
+no-data response. Add cases to `evals/guide.jsonl`; each evidence entry contains a topic,
+source URL, and statement. Place seeds still receive a format check. Backend tests run without
+public HTTP. PostgreSQL integration tests are optional.
 
 ## FishBase ingestion
 

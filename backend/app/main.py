@@ -1,27 +1,39 @@
+from contextlib import asynccontextmanager
+
+import httpx
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
+from app.api.dives import router
+from app.checklist.service import DiveService
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    app.state.dives = DiveService()
+    yield
+    await app.state.dives.close()
+
+
 app = FastAPI(
     title="Divepoint API",
-    version="0.1.0",
-    description="Data-first scaffold. Product endpoints are explicitly unimplemented.",
+    version="0.2.0",
+    lifespan=lifespan,
+    description="Occurrence-backed playable prototype. Monterey starter pack + live marine search.",
 )
+app.include_router(router)
+
+
+@app.exception_handler(httpx.HTTPError)
+async def upstream_error(request, error):
+    return JSONResponse(
+        status_code=503,
+        content={
+            "detail": "The biodiversity service is unavailable. Retry, or explore the recorded Monterey Bay dive."
+        },
+    )
 
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "stage": "scaffold"}
-
-
-def pending():
-    return JSONResponse(
-        status_code=501,
-        content={"detail": "Not implemented: no verified dive data is available yet."},
-    )
-
-
-app.add_api_route("/v1/dives/plan", pending, methods=["POST"], tags=["dives"])
-app.add_api_route("/v1/dives/{dive_id}", pending, methods=["GET"], tags=["dives"])
-app.add_api_route("/v1/species/{aphia_id}", pending, methods=["GET"], tags=["species"])
-app.add_api_route("/v1/dives/{dive_id}/ask", pending, methods=["POST"], tags=["guide"])
-app.add_api_route("/v1/logbook", pending, methods=["GET", "POST"], tags=["logbook"])
+    return {"status": "ok", "stage": "playable-prototype"}

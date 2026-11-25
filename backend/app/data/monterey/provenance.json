@@ -1,0 +1,266 @@
+{
+  "captured_at": "2026-11-16T19:11:13.246154+00:00",
+  "geometry_wkt": "POLYGON((-122.12 36.57,-121.74 36.57,-121.74 37.02,-122.12 37.02,-122.12 36.57))",
+  "description": "Bounded occurrence sample, not an exhaustive checklist or abundance estimate.",
+  "sources": [
+    {
+      "url": "https://www.marineregions.org/rest/getGazetteerRecordByMRGID.json/19167/",
+      "captured_at": "2026-11-16T19:10:36.376514+00:00",
+      "sha256": "7c26778ffad6b0c87d291660dbe2a0292e5254ff7e24ccf87970a859b6f68ef5"
+    },
+    {
+      "url": "https://api.obis.org/v3/occurrence?geometry=POLYGON%28%28-122.12+36.57%2C-121.74+36.57%2C-121.74+37.02%2C-122.12+37.02%2C-122.12+36.57%29%29&startdepth=0&enddepth=60&startdate=1970-01-01&size=1000&taxonid=293496&absence=false&dropped=false",
+      "captured_at": "2026-11-16T19:10:39.820729+00:00",
+      "sha256": "76a467db31625e02c52cbdbce2e87a17807784aa37943c86beed8148100549a3"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/274823",
+      "captured_at": "2026-11-16T19:10:40.145958+00:00",
+      "sha256": "ab0fbde02f92021e62acc061a1b9e4f36582e82dd598c0a27a22859ec377c9b7"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Sebastes+mystinus&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:10:40.430276+00:00",
+      "sha256": "081b06e3d8fba70ec4640dab9e1028ee29455783115b0f098a8422f8e4d7dae5"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/1804082",
+      "captured_at": "2026-11-16T19:10:41.603508+00:00",
+      "sha256": "c8ad2622aa3e6431615c78d47fe0a117f987ecc6531028197550da0a05bcff62"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Hypocritichthys+analis&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:10:41.679418+00:00",
+      "sha256": "675d97a77f1ac8f4a8780d85ec13fa74e4ce470ed1a31b531056f5ba936c5a2b"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/240723",
+      "captured_at": "2026-11-16T19:10:42.851308+00:00",
+      "sha256": "a4e7f56fdea85fd502116741b795ecc73f60769c4d03a75eb579bdcf5a59d6ef"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Lethops+connectens&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:10:42.916730+00:00",
+      "sha256": "8833ec0109e6fca872874d4c4f7e3dbf35b098f74697ef34b5eccab9637cb8d3"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/282629",
+      "captured_at": "2026-11-16T19:10:44.091606+00:00",
+      "sha256": "27ff7f3d1896949691a048db3de2c85d64da84f8bf678b85a6bac526b2c934e7"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Ronquilus+jordani&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:10:44.165928+00:00",
+      "sha256": "70ea45173b7bf877429bd144efd8d2ea800bc444126228d83132c74a34ffb0d4"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/272286",
+      "captured_at": "2026-11-16T19:10:45.830650+00:00",
+      "sha256": "23f31c96b55a3b4e72f974fe4127d522b4eee1ce76b6fd59815b0717d8c589fb"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Engraulis+mordax&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:10:45.891438+00:00",
+      "sha256": "642f7d7070c3b7621a14f375f8c7553a981bbf5521a043219a123d888d8a3d57"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/274786",
+      "captured_at": "2026-11-16T19:10:47.065453+00:00",
+      "sha256": "73d226bbfd884a70efe3f2dc20199f66ee4654425a143e37f7389fa89fb81208"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Sebastes+dallii&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:10:47.121459+00:00",
+      "sha256": "ad50bba98ff62b21cadc5968089a9ef85d957e5cc215466bf1a93abff231fd8e"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/275234",
+      "captured_at": "2026-11-16T19:10:48.305451+00:00",
+      "sha256": "8bb86ff770bb1ca3894f762899e673ca7c3e167987b735709ad079ccc9fc870b"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Balistes+polylepis&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:10:48.491442+00:00",
+      "sha256": "c178fa7c7129835dec4d129d378beef22cf3a210a071b98fd7eb1e75c016bed9"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/273374",
+      "captured_at": "2026-11-16T19:10:49.671444+00:00",
+      "sha256": "26de0d8617b60a364f92ad9e4d54d0e6e1bf30f846c84b8c396233ba752dc630"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Prognathodes+falcifer&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:10:49.746239+00:00",
+      "sha256": "b795b1a81454b7d6eece58c0a4e871542fdebabffc9468d3b7761619ba387d22"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/240737",
+      "captured_at": "2026-11-16T19:10:50.916554+00:00",
+      "sha256": "37f78be27861685a3f067aeaaf79c2c99e343338eb47b29a405d017a2fe5512d"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Sebastes+chrysomelas&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:10:51.127808+00:00",
+      "sha256": "5f18b70881dd2eb276cd489a1e0ce8d4007a74ad5589fc5a5d781ffc2f46808c"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/274791",
+      "captured_at": "2026-11-16T19:10:52.310629+00:00",
+      "sha256": "572f2ad2df9820c73bcc580f8f02d9beeaab3fa2a5b1c4083fd273a312d55414"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Sebastes+entomelas&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:10:52.376034+00:00",
+      "sha256": "fdae28201bcc361df11490c95d119c341d548daead1b51b2a6d981fb4070f0f3"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/282726",
+      "captured_at": "2026-11-16T19:10:53.565703+00:00",
+      "sha256": "6948e5b1ab835fb8d28dcd0f53c050e2fc692c6ef04a7760e83b9ed53e252ee2"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Scorpaenichthys+marmoratus&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:10:53.775647+00:00",
+      "sha256": "f56aac68ce0bf5adcd1b4c4c751d57352961ba8f6b011adad84e3f5b37daa04f"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/274780",
+      "captured_at": "2026-11-16T19:10:54.957373+00:00",
+      "sha256": "68bce12ee6084c50e87393247e6a42e8c81e8b193548b3d0c04dbcc0bffa5e5c"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Sebastes+caurinus&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:10:55.121206+00:00",
+      "sha256": "c28996918950b26234a1b76ebcb32d53d73fc6115b0e77541f06b88d6c79e1b8"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/279605",
+      "captured_at": "2026-11-16T19:10:56.297708+00:00",
+      "sha256": "19ed0c0846009e3234e9b90deb9502eefe8f0138c3ed5041f72c957698fb976d"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Anarrhichthys+ocellatus&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:10:56.495848+00:00",
+      "sha256": "a61bf1a0803c6bda8586f2587cedca11db20d0df778316c15d189559f2fdf87d"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/240735",
+      "captured_at": "2026-11-16T19:10:57.991363+00:00",
+      "sha256": "3b9180a6fb524c0320a3cbfccfe807853862ec5b6c1972df03600af8b199bdb0"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Hexagrammos+lagocephalus&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:10:58.130886+00:00",
+      "sha256": "5f280c722302a7998e163aa7681d6c82beee5eef97ed8b01c835375a0da63515"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/273305",
+      "captured_at": "2026-11-16T19:10:59.300666+00:00",
+      "sha256": "d2c6722061044a1075a3ed03bacf799e961b81cda26823a5173050b6f9a49042"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Trachurus+symmetricus&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:10:59.380834+00:00",
+      "sha256": "e453554057836ac22776dabc676ea37888822bbc4014031414751d51d7d37c2c"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/279617",
+      "captured_at": "2026-11-16T19:11:00.561887+00:00",
+      "sha256": "ccd269e3b9a0db506715773eec865d0c6b15020437c4200ede064b6163d996fb"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Anisotremus+davidsonii&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:11:00.705818+00:00",
+      "sha256": "0b6a13d846dfbe7b705d7d267a3239f8c33d30c88d6ff7ed62ef2297411cb0d3"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/1577347",
+      "captured_at": "2026-11-16T19:11:02.236527+00:00",
+      "sha256": "5735c95dff3d0bda006267b4d7050885b33b067a2fefa7aeb349b1ed0cf2bd05"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Phanerodon+vacca&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:11:02.300669+00:00",
+      "sha256": "d1ac58bc8f4e029c49d76faa398b2de331e58c84182a0f213edc8ca018db4699"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/240721",
+      "captured_at": "2026-11-16T19:11:03.477200+00:00",
+      "sha256": "f021393540d344fc82a94e8dc1acd6008df0aba0d39da36692647989644c9955"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Brachyistius+frenatus&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:11:03.541746+00:00",
+      "sha256": "a61120bd78665909d9beadbe2c431849bd1d09b01569bdd80a22967f700fd9b7"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/275355",
+      "captured_at": "2026-11-16T19:11:04.731227+00:00",
+      "sha256": "ab56739729047f3c819cdec2805f35c7c7b6d161bdf6201d3abc8a1624ab7ae7"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Enophrys+bison&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:11:04.787927+00:00",
+      "sha256": "0d9f76ee4416c7470fb8061b7cb00a3a841c9a9780a8fd09f13ee9035b727063"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/279664",
+      "captured_at": "2026-11-16T19:11:05.957789+00:00",
+      "sha256": "3dd3e9a9afa57cf890674ed21503a0f60a1b19155153875c0e1864c79fba4cdd"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Apodichthys+flavidus&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:11:06.032876+00:00",
+      "sha256": "269de7ff4077e66e40349d92218497cd4a1e5971725368e2362987759d05003b"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/280865",
+      "captured_at": "2026-11-16T19:11:07.207215+00:00",
+      "sha256": "7e93fa0c6c04d289628e9dba59359bc385e55d0a0336c575d64fbeb1368d4433"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Girella+nigricans&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:11:07.271000+00:00",
+      "sha256": "c45dd15e94ae4a8af91638a68efa5a8b0307ab0ed2125d3b6b164d9c8fbe9073"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/240746",
+      "captured_at": "2026-11-16T19:11:08.775893+00:00",
+      "sha256": "a21a9db77b0d749ef48a2dc4ca70e940ed3f44988048c03ad2877d153c3a1803"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Embiotoca+jacksoni&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:11:08.865802+00:00",
+      "sha256": "a8a4f6046da05463f66659c8d7603998f2b6f0b4dd848257b5188937796e0df2"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/240743",
+      "captured_at": "2026-11-16T19:11:10.041829+00:00",
+      "sha256": "8c5c38316b146e075ae48fd88efb8b731a1c5f9915b13ecb704f1feaf6ab6e58"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Oxylebius+pictus&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:11:10.145758+00:00",
+      "sha256": "785406a1a3fe01e2f29cb0630b41213b606410bfeb0ff93cfbe70a139899a1e7"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/274772",
+      "captured_at": "2026-11-16T19:11:12.117610+00:00",
+      "sha256": "d4e34dfbc49ca8d936407e58c0105aa98fac5b83933eb7684176989f1f95ed88"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/taxa?q=Sebastes+atrovirens&rank=species&per_page=5",
+      "captured_at": "2026-11-16T19:11:12.171479+00:00",
+      "sha256": "70fde4a8e4df18e10ff947be2aec1f6d5846d95f19c01d7fa4c7179cab403ae2"
+    }
+  ],
+  "fishbase_release": "v26.06",
+  "fishbase_parent_sha256": "87c99bc57f368c6102ea4042e7e6c8019c7405d5a352ead840f06244609ab101",
+  "files": {
+    "photos.json": "9b4f3a7132565fb96f4ff90e1cee94c5c1188d84dc9d8881bf4be12996d626e9",
+    "taxa.json": "b9695d8cb0f91e1a2646f39530e8cbaab374c8b73b791128426c5cb74f68fbe4",
+    "fishbase.json": "6ffc6cc0afaca7108e41ea9dba2d2fcb4cae1886ce7f0b2cfbd78294dbfcdd30",
+    "place.json": "4a373110a38dd4e48142cb969ee2f7252e0e2e8a0c378284ba00300fcbaa3ada",
+    "occurrences.json": "488cb5ab6ae7e33c65fec8ebb8dd3110369d9a18bc1cd7a6ec1db3220ac0f877"
+  }
+}

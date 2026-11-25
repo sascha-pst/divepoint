@@ -1,0 +1,280 @@
+{
+  "captured_at": "2026-11-22T19:03:59.024652+00:00",
+  "geometry_wkt": "POLYGON((129.39 -2.36,131.26 -2.36,131.26 0.19,129.39 0.19,129.39 -2.36))",
+  "description": "Bounded sample of qualifying OBIS records, not abundance or a full checklist.",
+  "sources": [
+    {
+      "url": "https://www.marineregions.org/rest/getGazetteerRecordByMRGID.json/21076/",
+      "captured_at": "2026-11-22T19:03:47.643359+00:00",
+      "sha256": "7cc9a0311fff09a3281c99eb01a2ab7ad7b8cda13f51352fadfe1cfd87d55edb"
+    },
+    {
+      "url": "https://api.obis.org/v3/occurrence?geometry=POLYGON%28%28129.39+-2.36%2C131.26+-2.36%2C131.26+0.19%2C129.39+0.19%2C129.39+-2.36%29%29&startdepth=0&enddepth=15&startdate=1970-01-01&size=1000&taxonid=293496&absence=false&dropped=false",
+      "captured_at": "2026-11-22T19:03:49.609134+00:00",
+      "sha256": "a848616984ba5d0e5d5ee5602fa48fb9cd64f3482ca7cd4f322c4e5052c877c4"
+    },
+    {
+      "url": "https://api.obis.org/v3/occurrence?geometry=POLYGON%28%28129.39+-2.36%2C131.26+-2.36%2C131.26+0.19%2C129.39+0.19%2C129.39+-2.36%29%29&startdepth=15&enddepth=30&startdate=1970-01-01&size=1000&taxonid=293496&absence=false&dropped=false",
+      "captured_at": "2026-11-22T19:03:50.150321+00:00",
+      "sha256": "362f8a48300367a18a3c50704c2f72cf5ca009bcd6379af2d18175bc9443a564"
+    },
+    {
+      "url": "https://api.obis.org/v3/occurrence?geometry=POLYGON%28%28129.39+-2.36%2C131.26+-2.36%2C131.26+0.19%2C129.39+0.19%2C129.39+-2.36%29%29&startdepth=30&enddepth=60&startdate=1970-01-01&size=1000&taxonid=293496&absence=false&dropped=false",
+      "captured_at": "2026-11-22T19:03:50.542433+00:00",
+      "sha256": "26e30f2d6e92683e159785c680a9c8daa4bc19e7c8c1fd85316d255e2f9155b5"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/712689",
+      "captured_at": "2026-11-22T19:03:50.719362+00:00",
+      "sha256": "9230e735c7f6647d4a711221ac03e0525d8673a74f471a85042de96b14201f25"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/209210",
+      "captured_at": "2026-11-22T19:03:50.889174+00:00",
+      "sha256": "74b2b1e23edc94d5eda7e7c7eeeeadc661ddafb6315bd6219865b1ef2d766426"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/209384",
+      "captured_at": "2026-11-22T19:03:51.049290+00:00",
+      "sha256": "5bafd7009bab059ef3fa8a432378e5fc2e3dbbaa141e9f21c626b81c4aed0b9a"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/282790",
+      "captured_at": "2026-11-22T19:03:51.215118+00:00",
+      "sha256": "0061b9e1624a72a708570dd7ae15f27fcc196fb4f3b8cc3c03a6c0939eec8c45"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/126331",
+      "captured_at": "2026-11-22T19:03:51.388332+00:00",
+      "sha256": "b1cb12942aa47192d1f8c7b88c7cb6da61a56e347553b1fd2000772089499453"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/281242",
+      "captured_at": "2026-11-22T19:03:51.549168+00:00",
+      "sha256": "ee7eb477e469340a01fc34a8bd4dec05f66fafecfe45e2d3d856432102ea0603"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/278494",
+      "captured_at": "2026-11-22T19:03:51.709128+00:00",
+      "sha256": "7278354a30a2a5e0e060c0926bad8fb47f904b09e759d2713248149a974aa6ff"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/217883",
+      "captured_at": "2026-11-22T19:03:51.868916+00:00",
+      "sha256": "e47faa40585a07ff2040232eae47caa6ceda5455706e796adab7dfeb213b7688"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/281081",
+      "captured_at": "2026-11-22T19:03:52.051166+00:00",
+      "sha256": "c291a9b2f479598c001c6dea6a5d467b4262dad983f3c936c97a37dd40375a33"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/277514",
+      "captured_at": "2026-11-22T19:03:52.208263+00:00",
+      "sha256": "c3d4b30bcab488cedb01cf61f8f2e826a5ea19a0f34fe25201f60021f0d25dfa"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/398507",
+      "captured_at": "2026-11-22T19:03:52.368486+00:00",
+      "sha256": "d5d24a66beea48137fab6c5e1e7be0bb35ec933b8fe777b1b795b77895dc483f"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/281672",
+      "captured_at": "2026-11-22T19:03:52.527979+00:00",
+      "sha256": "73e9d3bd3603e035c49b5c9562267da2a5595becfa8d4ad718b0f438ee947182"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/278604",
+      "captured_at": "2026-11-22T19:03:52.687107+00:00",
+      "sha256": "72c26834c37d3e7c367c752b0067b40ce01bd1e5bad29c87b288e0241218cfb8"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/282718",
+      "captured_at": "2026-11-22T19:03:52.853206+00:00",
+      "sha256": "06dd28db36a72d6bf8bd2305d01e3eb817334ca998ea32a07a7264192aa21090"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/218010",
+      "captured_at": "2026-11-22T19:03:53.029330+00:00",
+      "sha256": "a3bbce4c99283c334f590aba374e654fbe7ed4211fde1e00666465f35d2f49a7"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/278188",
+      "captured_at": "2026-11-22T19:03:53.310532+00:00",
+      "sha256": "10586aea3e7e83d7b9f4300c2ad272a79fe005c798c43297b19967097373e233"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/278601",
+      "captured_at": "2026-11-22T19:03:53.474693+00:00",
+      "sha256": "290c36c49dd73de320d62cf7fe9040717125428431798bd5cc008b108a1cd41d"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/277783",
+      "captured_at": "2026-11-22T19:03:53.653288+00:00",
+      "sha256": "da2af1f805d126a3f53d738f56cdc25f9d0f060579a3fe00567596070c15911f"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/277345",
+      "captured_at": "2026-11-22T19:03:53.828332+00:00",
+      "sha256": "bf37e481cd4a9774e5145e0a847d3b3356ed830babcfa28046a9bedacbf4ebab"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/712668",
+      "captured_at": "2026-11-22T19:03:53.989754+00:00",
+      "sha256": "e5df9639798ba0c49780e3181619da7b9ed104d95238e72e9f6449686d755d63"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/273178",
+      "captured_at": "2026-11-22T19:03:54.168595+00:00",
+      "sha256": "d82974e902b3b156c2dd6eca6df6ed2620693634175099bf19c7ea870f025d33"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/475093",
+      "captured_at": "2026-11-22T19:03:54.333733+00:00",
+      "sha256": "54eee9c2be024dee76ad65c530ead23ac62ca4e2c1cc9b29198048c209affe62"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/217459",
+      "captured_at": "2026-11-22T19:03:54.507424+00:00",
+      "sha256": "6997e7cd4aa3683666ec5635bfd72ea2a3f296173ce7a835ac91758ebb137dc7"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/273251",
+      "captured_at": "2026-11-22T19:03:54.673118+00:00",
+      "sha256": "cd1ec5a284e0ceb0f27dc6a7f1fa918f98ad4062425c28201adde4a217c747e9"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/275187",
+      "captured_at": "2026-11-22T19:03:54.847881+00:00",
+      "sha256": "2494c2d455dd33b389d8ec9323f14299ac89b54d6d1523e36cc2448a1db61d65"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/388749",
+      "captured_at": "2026-11-22T19:03:55.012387+00:00",
+      "sha256": "e712b330f1392451e57ad25cda2a327e5983b37e62fa882cb599889f6d37b936"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/276900",
+      "captured_at": "2026-11-22T19:03:55.179123+00:00",
+      "sha256": "b56132317b5abef9e400a3660b41f45ceb747ef69f0f685387218e1f98161387"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/278516",
+      "captured_at": "2026-11-22T19:03:55.352534+00:00",
+      "sha256": "39a5ceac395b128e3838107ae3a6ad19637ee9b92e7fffca5cf87a396f0a4375"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/398505",
+      "captured_at": "2026-11-22T19:03:55.508204+00:00",
+      "sha256": "7d9f8c1981dd6aa7cc4a2d2e454189f75806ac14c4952b9c402ff49db63c7ca4"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/712688",
+      "captured_at": "2026-11-22T19:03:55.679858+00:00",
+      "sha256": "9dd11519b0e8a8e1d471f73731f652be91c25b97d15d0a50ed3a8450a4e8ffcb"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/319876",
+      "captured_at": "2026-11-22T19:03:55.848131+00:00",
+      "sha256": "71ed00bbbd315b8662c6cdec36e14248e742df1ab870f05c20728768f05dd20b"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/219583",
+      "captured_at": "2026-11-22T19:03:56.012656+00:00",
+      "sha256": "d2578d29347d3f661a74bce6bbd5590cfe3dc259aea5b4e940c9027ffb6a7789"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/278609",
+      "captured_at": "2026-11-22T19:03:56.192766+00:00",
+      "sha256": "d25118c4383288c5abaaf6a14efee13d2d3b799f046903a4a7ff5b876e844ce3"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/281408",
+      "captured_at": "2026-11-22T19:03:56.362517+00:00",
+      "sha256": "af44704a6831212e6a7fbd3e2cd415f38f6cb798aa5b2e89ed317512fe8dde7b"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/276880",
+      "captured_at": "2026-11-22T19:03:56.543348+00:00",
+      "sha256": "5b03c33c947db63a7e906ee4815d79e31b4ca37c28a10cafccb077cd3c8e8681"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/218097",
+      "captured_at": "2026-11-22T19:03:56.707720+00:00",
+      "sha256": "9fb8beae2466d4c69d76fde3669085914adeb26c87562c70f5f6d71d4af72a07"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/312026",
+      "captured_at": "2026-11-22T19:03:56.868221+00:00",
+      "sha256": "b9c078838db50f9f80cad8892bd7f6f1480bf689dad01381b336096dfd188bbb"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/278766",
+      "captured_at": "2026-11-22T19:03:57.033044+00:00",
+      "sha256": "335bf5b5c81803b12b36493f94d747c4717b861990edd3cf091da6aa2927f164"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/271851",
+      "captured_at": "2026-11-22T19:03:57.188450+00:00",
+      "sha256": "69772f77a2fd9845e0ebf8ec544e6c4ab59b33fb436ac754af94b30686084b13"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/209308",
+      "captured_at": "2026-11-22T19:03:57.358359+00:00",
+      "sha256": "613e827c09cc68cbeaa562ddf89a922eeeb462ff47242cfdaecf7edf7e4a7635"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/277781",
+      "captured_at": "2026-11-22T19:03:57.532564+00:00",
+      "sha256": "c85ce4ffc8d9b28e4ff32070c3892a8c498009e41f04436a7ea714be4383ba0a"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/219408",
+      "captured_at": "2026-11-22T19:03:57.728376+00:00",
+      "sha256": "f98add00276ee9d9905ed01d3c309f7ecd51e84c30eb1c1dd54561e4f402a212"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/278878",
+      "captured_at": "2026-11-22T19:03:57.895411+00:00",
+      "sha256": "185f2dc20ff1981c21231d1a2e98de9caf2b5f8025686d0496f2e9adce70ac56"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/278514",
+      "captured_at": "2026-11-22T19:03:58.073127+00:00",
+      "sha256": "5ec7c5f1cc42b8ed401fbaa1f454cf9c77c357b3568e3f956b63ed74b076ceea"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/279482",
+      "captured_at": "2026-11-22T19:03:58.302663+00:00",
+      "sha256": "2807e33f3f0cf4ea85aca5b8e907368c1edbd48a92b66fcb027a6c9f6392ad68"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/712619",
+      "captured_at": "2026-11-22T19:03:58.464370+00:00",
+      "sha256": "cd6e20a893d137cefeb34e66ee53ad35bfd7d854e5f4171adb7475333b18031b"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/219588",
+      "captured_at": "2026-11-22T19:03:58.634745+00:00",
+      "sha256": "3504a0d1f97a8740ccb8435cffacfe6b6ef43a4af40f9541bffca8d43b2b6175"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/276772",
+      "captured_at": "2026-11-22T19:03:58.809653+00:00",
+      "sha256": "f6a164cc0f17c5af3445f08963486cf3c83f5b412371bf880f0e29b8d9b8b252"
+    },
+    {
+      "url": "https://api.obis.org/v3/taxon/219164",
+      "captured_at": "2026-11-22T19:03:58.984346+00:00",
+      "sha256": "60ef96ae4a5622ecc175f86d7b3a04311ff07fec2cb3a88010b3070523740072"
+    }
+  ],
+  "fishbase_release": "v26.06",
+  "fishbase_parent_sha256": "87c99bc57f368c6102ea4042e7e6c8019c7405d5a352ead840f06244609ab101",
+  "files": {
+    "place.json": "b607e7ee49345c8deee1b344ff0d9f5d06200b570a1d8c933d134c6e08a5b0e2",
+    "occurrences.json": "65617ba06f86eaf87a1f63b75cd4eb0419720bdf1c05e1dd5b287894f20d91ae",
+    "taxa.json": "f69531bf15f3cc39171da94d195c88caf5f21fbc18fe36e0aba8b43e6d8ac3b5",
+    "fishbase.json": "e7ca190e39fc92befeb54fd6bf195e184bd17f9bbabbc6331e733d3d69a74d3b"
+  }
+}
